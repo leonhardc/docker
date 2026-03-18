@@ -9,86 +9,109 @@ Este repositorio tem o intuito somente de estudo e anotação sobre docker. Qual
 ### Comandos: Imagens
 
 ```bash
-$ docker image ls # lista todas as imagens no host
+# lista todas as imagens no host
+$ docker image ls 
 ```
 
 ```bash
-$ docker images # versão abreviada do comando acima
+# versão abreviada do comando acima
+$ docker images 
 ```
 
 ```bash
-$ docker pull {usuario}/{nome-da-imagem}:{tag} # baixar uma imagem do dockerhub ou outro hub docker
+# baixar uma imagem do dockerhub ou outro hub docker
+$ docker pull {usuario}/{nome-da-imagem}:{tag} 
 ```
 
 ### Comandos: Containers
 
 ```bash
-$ docker container run {imagem} # inicia um container
+# inicia um container
+$ docker container run {imagem} 
 ```
 
 ```bash
-$ docker run {imagem} # inicia um container
+# inicia um container
+$ docker run {imagem} 
 ```
 
 ```bash
-$ docker run -d {imagem} ## inicia um container mas sem travar o terminal
+# inicia um container mas sem travar o terminal
+$ docker run -d {imagem} 
 ```
 
 ```bash
-$ docker run -d -p {posta-host}:{posta-container} # roda um container redirecionando a porta do host para uma determinada porta do container. obs: 8080:80
+# roda um container redirecionando a porta do host para 
+# uma determinada porta do container. Ex: 8080:80
+$ docker run -d -p {posta-host}:{posta-container} 
 ```
 
 ```bash
-$ docker ps # mostra todos os containers que estao rodando
+# mostra todos os containers que estao rodando
+$ docker ps 
 ```
 
 ```bash
-$ docker ps -a # mostra todos os containers
+# mostra todos os containers
+$ docker ps -a 
 ```
 
 ```bash
-$ docker stop {id-container} # para o container
+# para o container
+$ docker stop {id-container} 
 ```
 
 ```bash
-$ docker logs {id-container} # logs do container
+# logs do container
+$ docker logs {id-container} 
 ```
 
 ```bash
-$ docker logs {id-container} -i # logs do container em tempo real
+# logs do container em tempo real
+$ docker logs {id-container} -i 
 ```
 
 ```bash
-$ docker container stats # mostra estatisticas do container em comparacao as estatisticas do host
+# mostra estatisticas do container em comparacao as estatisticas do host
+$ docker container stats 
 ```
 
 ```bash
-$ docker container pause {id-container} # Pausa um container em execução
+# Pausa um container em execução
+$ docker container pause {id-container} 
 ```
 
 ```bash
-$ docker container enpause {id-container} # Despausa um container pausado
+# Despausa um container pausado
+$ docker container enpause {id-container} 
 ```
 
 ```bash
-$ docker container top {id-container} # lista os processos do container
-$ docker top {id-container} # faz a mesma coisa do comando anterior
+# lista os processos do container
+$ docker container top {id-container} 
+ # faz a mesma coisa do comando anterior
+$ docker top {id-container}
 ```
 
 ```bash
-$ docker stop {id-container} # para um container
+ # parar um container
+$ docker stop {id-container}
 ```
 
 ```bash
-$ docker container start {id-container} # starta container parado
+# starta container parado
+$ docker container start {id-container} 
 ```
 
 ```bash
-$ docker exec {id-container} {comando} # Executa comandos dentro do container. Lembrando que somente comandos que existem no container.
+# Executa comandos dentro do container. Lembrando que 
+# somente comandos que existem no container.
+$ docker exec {id-container} {comando} 
 ```
 
 ```bash
-$ docker exec -it {id-container} {comando} # Taxar um comando no modo iterativo
+# Taxar um comando no modo iterativo
+$ docker exec -it {id-container} {comando} 
 # Ex.:
 $ docker exec -it {id-container} /bin/sh
 # ou 
@@ -96,12 +119,16 @@ $ docker exec -it {id-container} /bin/bash
 ```
 
 ```bash
-$ docker rm {id-container} # remover um container
-$ docker rm -f {id-container} # parar e remover o container, caso o container estiver rodando.
+# remover um container
+$ docker rm {id-container} 
+# parar e remover o container, caso o container 
+# estiver rodando.
+$ docker rm -f {id-container} 
 ```
 
 ```bash
-$ docker container prune # remove todos os containers parados
+# remove todos os containers parados
+$ docker container prune 
 ```
 
 
