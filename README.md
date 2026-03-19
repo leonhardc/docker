@@ -131,4 +131,41 @@ $ docker rm -f {id-container}
 $ docker container prune 
 ```
 
+### Bridge
+
+```bash
+# Listar as redes docker
+$ docker network ls
+```
+
+```bash
+# Cria uma rede docker chamada demo
+$ docker network create demo
+```
+
+```bash
+# Inspedionar uma rede
+$ docker inspect {id-network}
+# ou
+$ docker network inspect {id-network}
+```
+
+```bash
+# conectar uma rede em um container
+$ docker network connect {rede} {container}
+```
+
+```bash
+# conectar uma rede em um container agora configurando um alias para
+# o container. Sendo possivel agora chamar esse container pelo alias
+# pela rede.
+$ docker network connect --alias={alias-container} {rede} {container}
+```
+
+```bash
+# Desconectar uma rede em um container
+$ docker network disconnect {rede} {container}
+```
+
+
 
