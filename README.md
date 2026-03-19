@@ -167,5 +167,14 @@ $ docker network connect --alias={alias-container} {rede} {container}
 $ docker network disconnect {rede} {container}
 ```
 
+### Volumes
 
+```bash
+# Criar um volume docker
+$ docker volume create [{nome-do-volume}]
+```
+```bash
+# Listar os volumes docker
+$ docker volume ls
+```
 
