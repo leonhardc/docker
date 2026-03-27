@@ -177,4 +177,31 @@ $ docker volume create [{nome-do-volume}]
 # Listar os volumes docker
 $ docker volume ls
 ```
+### Criando Imagens
+
+O exemplo abaixo é de uma imagem criada para uma aplicação Django, que é o que estou atualmente trabalhando.
+
+```dockerfile
+FROM python:3.10.12
+
+WORKDIR /app
+
+COPY requirements.txt /app
+
+RUN pip install -r requirements.txt
+
+COPY . .
+
+EXPOSE 8000
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+```
+
+Passo a passo vou explicar cada um dos comandos:
+
+* Em `FROM python:3.10.12` definimos qual imagem usaremos de base para a imagem que estamos criando. No meu caso é o `python:3.10.12`;
+* `WORKDIR /app` se refere a qual sera o meu diretorio padrao, ou diretorio de trabalho, dentro da nossa imagem;
+* `COPY requirements.txt /app` é um comando para copiar o arquivo `requirements.txt` para o diretorio `/app` dentro da imagem;
+* `RUN pip install -r requirements.txt` é para rodar um comando na hora que voce esta montando a imagem. No caso o comando é `pip install -r requirements.txt`;
+
 
