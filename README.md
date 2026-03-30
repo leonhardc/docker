@@ -182,6 +182,7 @@ $ docker volume ls
 O exemplo abaixo é de uma imagem criada para uma aplicação Django, que é o que estou atualmente trabalhando.
 
 ```dockerfile
+# .Dockerfile
 FROM python:3.10.12
 
 WORKDIR /app
@@ -203,5 +204,10 @@ Passo a passo vou explicar cada um dos comandos:
 * `WORKDIR /app` se refere a qual sera o meu diretorio padrao, ou diretorio de trabalho, dentro da nossa imagem;
 * `COPY requirements.txt /app` é um comando para copiar o arquivo `requirements.txt` para o diretorio `/app` dentro da imagem;
 * `RUN pip install -r requirements.txt` é para rodar um comando na hora que voce esta montando a imagem. No caso o comando é `pip install -r requirements.txt`;
+* `COPY . .` é um comando para copiar a pasta atual (primeiro ponto) para `workdir`, ou `/app` (segundo ponto);
+* `EXPOSE 8000` expoe a porta 8000 do container na hora do `docker run` para acesso externo;
+* `CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]`. Como voce pode ver o comando `CMD` recebe uma lista que deve ser declarada com aspas duplas `"`. Nessa lista deve conter uma lista que compoe um comando que sera executado no momento do `docker run`. 
+
+
 
 
